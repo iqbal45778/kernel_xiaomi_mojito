@@ -116,6 +116,7 @@ vendor.qcom.bluetooth.soc=cherokee
 
 # Camera
 camera.disable_zsl_mode=1
+vendor.camera.aux.packageexcludelist=org.telegram.messenger,org.thunderdog.challegram,tw.nekomimi.nekogram,it.owlgram.android
 
 # Charge
 persist.vendor.quick.charge=1
@@ -141,6 +142,10 @@ persist.vendor.dpm.feature=1
 persist.vendor.dpm.nsrm.bkg.evt=3955
 persist.vendor.dpmhalservice.enable=1
 
+# HWUI
+debug.hwui.use_hint_manager=true
+debug.hwui.target_cpu_time_percent=30
+
 # Display
 debug.egl.hw=0
 debug.mdpcomp.logs=0
@@ -149,7 +154,12 @@ debug.sf.early.app.duration=16600000
 debug.sf.early.sf.duration=16600000
 debug.sf.earlyGl.app.duration=16600000
 debug.sf.earlyGl.sf.duration=16600000
+debug.sf.disable_client_composition_cache=1
+debug.sf.latch_unsignaled=1
+debug.sf.auto_latch_unsignaled=0
 debug.sf.enable_hwc_vds=0
+debug.sf.enable_gl_backpressure=0
+vendor.display.disable_rotator_downscale=1
 debug.sf.hw=0
 debug.sf.late.app.duration=16600000
 debug.sf.late.sf.duration=10500000
@@ -260,3 +270,6 @@ wifi.aware.interface=wifi-aware0
 
 # WLAN
 persist.vendor.data.iwlan.enable=true
+
+# Camera
+persist.vendor.camera.privapp.list=com.android.camera
