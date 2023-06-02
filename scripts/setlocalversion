@@ -58,9 +58,12 @@ scm_version()
 				return
 			fi
 
-			# Avoid asking git for tag as it could be extremely slow.
-			# We print -g{commitish}.
-			printf '%s%s' -g $head
+			# If we don't have a tag at all we print -g{commitish},
+			# again using exactly 12 hex chars.
+			else
+				head="$(echo $head | cut -c1-8)"
+				printf '%s%s' -@ $head
+			fi
 		fi
 
 		# Is this git on svn?
