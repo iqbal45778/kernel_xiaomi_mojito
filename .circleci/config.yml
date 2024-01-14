@@ -7,6 +7,7 @@ jobs:
       - run:
           no_output_timeout: 50m
           command: |
+<<<<<<< HEAD
            git clone https://github.com/iqbal45778/kernel_xiaomi_mojito -b inline-rom --depth=1 kernel 
            cd kernel
            git clone https://github.com/iqbal45778/myscripts -b master
@@ -14,6 +15,13 @@ jobs:
            chmod +x myscripts/mojito.sh
            source ./myscripts/clang_mojito.sh
            ./myscripts/mojito.sh
+=======
+            apt update && apt upgrade -y
+            apt install bc build-essential bison flex zip gcc clang libc6 curl libstdc++6 git wget libssl-dev zstd openjdk-11-jdk openjdk-11-jre python-is-python3 -y
+            git clone https://github.com/fiqri19102002/android_kernel_xiaomi_mojito.git -b a11/main --depth=1 mojito
+            cd mojito
+            bash build.sh
+>>>>>>> 875a598ef694 (Revert "build: Switch to Google Clang")
 workflows:
   version: 2.1
   cooking:
