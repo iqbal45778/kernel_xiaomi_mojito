@@ -26,4 +26,4 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 # ArrowOS flags
 DEVICE_MAINTAINER := daralys
-ARROW_GAPPS := false
+ARROW_GAPPS := true
