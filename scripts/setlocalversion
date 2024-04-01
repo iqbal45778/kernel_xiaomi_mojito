@@ -57,13 +57,6 @@ scm_version()
 				echo "+"
 				return
 			fi
-
-			# If we don't have a tag at all we print -g{commitish},
-			# again using exactly 12 hex chars.
-			else
-				head="$(echo $head | cut -c1-8)"
-				printf '%s%s' -@ $head
-			fi
 		fi
 
 		# Is this git on svn?
