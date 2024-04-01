@@ -15,13 +15,13 @@ IMG_DIR="$KERNEL_DIR"/out/arch/arm64/boot
 DEFCONFIG=vendor/mojito_defconfig
 
 # Set common environment
-export KBUILD_BUILD_USER="FiqriArdyansyah"
+export KBUILD_BUILD_USER="iqbal"
 
 #
 # Set if do you use GCC or clang compiler
 # Default is clang compiler
 #
-COMPILER=clang
+COMPILER=gcc
 
 # Get distro name
 DISTRO=$(source /etc/os-release && echo ${NAME})
@@ -112,12 +112,6 @@ cfg_changes() {
 	fi
 }
 
-# Set function for enable boot clock timestamp buffer
-enable_boot_clock() {	
-	# Enable boot clock timestamp buffer support for MIUI ROMs and MIUI Camera
-	sed -i 's/# CONFIG_MSM_CAMERA_BOOTCLOCK_TIMESTAMP is not set/CONFIG_MSM_CAMERA_BOOTCLOCK_TIMESTAMP=y/g' arch/arm64/configs/vendor/mojito_defconfig
-}
-
 # Set function for cloning repository
 clone() {
 	# Clone AnyKernel3
@@ -148,12 +142,12 @@ clone() {
 
 # Set function for naming zip file
 set_naming_for_bc() {
-	KERNEL_NAME="STRIX-mojito-bc-lmk-personal-$ZIP_DATE"
+	KERNEL_NAME="PERF-mojito-bc-lmk-personal-$ZIP_DATE"
 	export ZIP_NAME="$KERNEL_NAME.zip"
 }
 
 set_naming_for_smt() {
-	KERNEL_NAME1="STRIX-mojito-smt-lmk-personal-$ZIP_DATE"
+	KERNEL_NAME1="PERF-mojito-smt-lmk-personal-$ZIP_DATE"
 	export ZIP_NAME1="$KERNEL_NAME1.zip"
 }
 
