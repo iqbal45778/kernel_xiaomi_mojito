@@ -1,0 +1,21 @@
+version: 2.1
+jobs:
+  compile:
+   docker:
+      - image: ghcr.io/neutron-toolchains/docker-image:arch-neutron
+   steps:
+      - run:
+          no_output_timeout: 60m
+          command: |
+           git clone https://github.com/iqbal45778/android_kernel_xiaomi_mojito -b a11/main --depth=1 kernel 
+           cd kernel
+           git clone https://github.com/iqbal45778/myscripts -b master
+           chmod +x myscripts/clang_mojito.sh
+           chmod +x myscripts/mojito.sh
+           source ./myscripts/clang_mojito.sh
+           ./myscripts/mojito.sh
+workflows:
+  version: 2.1
+  cooking:
+    jobs:
+      - compile
