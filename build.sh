@@ -146,11 +146,6 @@ set_naming_for_bc() {
 	export ZIP_NAME="$KERNEL_NAME.zip"
 }
 
-set_naming_for_smt() {
-	KERNEL_NAME1="PERF-mojito-smt-lmk-personal-$ZIP_DATE"
-	export ZIP_NAME1="$KERNEL_NAME1.zip"
-}
-
 # Set function for starting compile
 compile() {
 	echo -e "Kernel compilation starting"
@@ -262,6 +257,3 @@ set_naming_for_bc
 gen_zip_for_bc
 enable_boot_clock
 cfg_changes
-compile
-set_naming_for_smt
-gen_zip_for_smt
