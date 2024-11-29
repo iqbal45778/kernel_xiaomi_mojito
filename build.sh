@@ -114,7 +114,7 @@ cfg_changes() {
 
 # Set function for cloning repository
 clone() {
-	# Clone AnyKernel3
+.	# Clone AnyKernel3
 	git clone --depth=1 https://github.com/fiqri19102002/AnyKernel3.git -b mojito
 
 	if [ $COMPILER == "clang" ]; then
@@ -123,8 +123,7 @@ clone() {
 		# Set environment for clang
 		TC_DIR=$KERNEL_DIR/clang
 		# Get path and compiler string
-		KBUILD_COMPILER_STRING=$("$TC_DIR"/bin/clang --version | head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g' -e 's/[[:space:]]*$//')
-		PATH=$TC_DIR/bin/:$PATH
+		PATH=$TC_DIR/clang-r498229b/bin/:$PATH
 	elif [ $COMPILER == "gcc" ]; then
 		# Clone GCC ARM64 and ARM32
 		git clone https://github.com/fiqri19102002/aarch64-gcc.git -b release/elf-12 --depth=1 gcc64
@@ -166,6 +165,12 @@ compile() {
 	if [ $COMPILER == "clang" ]; then
 		make -j"$PROCS" O=out \
 				CROSS_COMPILE=aarch64-linux-gnu- \
+                                LD=ld.lld \
+                                AS=llvm-as \
+                                AR=llvm-ar \
+                                STRIP=llvm-strip \
+                                NM=llvm-nm \
+                                OBJDUMP=llvm-objdump \
 				LLVM=1 \
 				LLVM_IAS=1
 	elif [ $COMPILER == "gcc" ]; then
