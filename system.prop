@@ -31,3 +31,23 @@ ro.telephony.default_cdma_sub=0
 ro.telephony.default_network=22,20
 telephony.lteOnCdmaDevice=1
 persist.vendor.radio.apm_sim_not_pwdn=1
+
+# LMKD
+ro.config.low_ram=false
+ro.lmk.log_stats=true
+ro.lmk.use_minfree_levels=true 
+ro.lmk.thrashing_limit=200
+ro.lmk.psi_partial_stall_ms=120
+
+# RIL Powersaving
+persist.radio.add_power_save=1
+pm.sleep_mode=1
+ro.ril.disable.power.collapse=0 
+ro.ril.fast.dormancy.rule=1
+ro.ril.fast.dormancy.timeout=3
+ro.mot.eri.losalert.delay=1000 
+ro.vold.umsdirtyratio=20
+power.saving.mode=1
+
+#AvoidGfxAccel
+ro.config.avoid_gfx_accel=true
