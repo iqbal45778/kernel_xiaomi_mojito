@@ -61,7 +61,7 @@ void load_vendor_props() {
     if (hwname.find("sunny") != std::string::npos) {
         property_override("ro.product.device", "sunny");
         property_override("ro.product.name", "sunny");
-        property_override("ro.build.fingerprint", "Redmi/sunny_global/sunny:12/RKQ1.210614.002/V14.0.8.0.SKGMIXM:user/release-keys");u
+        property_override("ro.build.fingerprint", "Redmi/sunny_global/sunny:12/RKQ1.210614.002/V14.0.8.0.SKGMIXM:user/release-keys");
         property_override("ro.vendor.build.fingerprint", "Redmi/sunny_global/sunny:12/RKQ1.210614.002/V14.0.8.0.SKGMIXM:user/release-keys");
         property_override("ro.bootimage.build.fingerprint", "Redmi/sunny_global/sunny:12/RKQ1.210614.002/V14.0.8.0.SKGMIXM:user/release-keys");
         property_override("ro.build.description", "sunny_global-user 12 SKQ1.210908.001 V14.0.8.0.SKGMIXM release-keys");
